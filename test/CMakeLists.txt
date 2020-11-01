@@ -1,1 +1,2 @@
-addTest(first first_test.cpp)
+include_directories(.)
+add_subdirectory(first)
