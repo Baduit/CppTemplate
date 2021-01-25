@@ -1,7 +1,7 @@
 #include <iostream>
 #include <utility>
 
-#include <boost_ut/ut.hpp>
+#include <boost/ut.hpp>
 
 using namespace boost::ut;
 

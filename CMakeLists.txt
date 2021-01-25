@@ -2,7 +2,16 @@ cmake_minimum_required(VERSION 3.12)
 
 project(Example VERSION 0.1 DESCRIPTION "An example")
 
-set (CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+include(CPM)
+
+CPMAddPackage(
+	NAME ut
+	VERSION 1.1.8
+	GITHUB_REPOSITORY "boost-ext/ut"
+	GIT_TAG dbb3cabe219322f2ced8d87056c2421edd7cce2d
+)
 
 add_subdirectory(lib)
 add_subdirectory(bin)                    
