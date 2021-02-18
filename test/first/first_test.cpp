@@ -1,16 +1,18 @@
-#include <iostream>
-#include <utility>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <doctest/doctest.h>
 
-#include <boost/ut.hpp>
-
-using namespace boost::ut;
-
-void first()
+void thrower()
 {
-	expect((true) >> fatal) << "If this test fails, the it stops here.";
+	throw 5;
 }
 
-int main()
+TEST_CASE("Example")
 {
-	"first"_test = first;
+	CHECK(1 == 1);
+	CHECK_MESSAGE(true, "A message");
+
+	SUBCASE("my subcase")
+    {
+		REQUIRE(5 == 5);
+    }
 }
